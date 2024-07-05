@@ -1,0 +1,13 @@
+<div style="display: flex; justify-content: space-between;">
+    <% if (typeof data ==='object' && data.user) { %>
+        <div>
+            <a href="/articles/new" class="btn btn-success">New Article</a>
+            <a href="/user" class="btn btn-light">Your articles</a>
+        </div>
+      <% } %>
+    <form style="width: 400px;" class="input-group" action="/search" method="GET">
+        <input type="text" class="form-control rounded" placeholder="Search articles" 
+        aria-label="Search" aria-describedby="search-addon" name="search" />
+        <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>Search</button>
+      </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" value="<%= article.title %>" name="title" id="title" class="form-control" required>
+</div>
+<div>
+    <label for="tags">Tags</label>
+    <select name="tags">
+        <% if (typeof tags==='object' && tags.tags) {
+         for (const tag of tags.tags) {%>
+            <option value="<%= tag %>"><%= tag %></option>
+        <% }} %>
+    </select>
+</div>
+<div class="form-group">
+    <label for="description">Descirption</label>
+    <textarea style="height:100px;"
+     type="text" name="description" id="description" class="form-control"><%= article.description %></textarea>
+</div>
+<div class="form-group">
+    <label for="image">Image</label>
+    <input type="text" value="<%= article.image %>" name="image" id="image" class="form-control" required>
+</div>
+<div class="form-group">
+    <label for="detail">Detail</label>
+    <textarea style="height:300px;"
+     type="text" name="detail" id="detail" class="form-control"><%= article.detail %></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Save</button>
+<a href="/" class="btn btn-secondary">Cancel</a>
